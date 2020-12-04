@@ -1,0 +1,41 @@
+{
+  "name": "explorer",
+  "version": "0.0.1",
+  "description": "doploma project",
+  "main": "app.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "celebrate": "^13.0.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-winston": "^4.0.5",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.13",
+    "validator": "^13.1.17",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.5"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlegPeunov/news-explorer-api-Peunov.git"
+  },
+  "keywords": [
+    "explorer"
+  ],
+  "author": "Peunov O A",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlegPeunov/news-explorer-api-Peunov/issues"
+  },
+  "homepage": "https://github.com/OlegPeunov/news-explorer-api-Peunov#readme"
+}
