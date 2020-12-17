@@ -9,6 +9,9 @@
 Для запуска проета нужно скачать проект через: git clone https://github.com/OlegPeunov/news-explorer-api-Peunov.git
 и запустить через команду "npm run start"
 
+Домен: https://diplompeunov.students.nomoreparties.space
+Публичный ip:178.154.228.31
+
 
 ***
-Проект создан с помощью следующих технологий: JS, Git, Node, яндкс-облако.
+Проект создан с помощью следующих технологий: JS, Git, Node, Mongo, Яндкс-Облако.
