@@ -12,8 +12,10 @@ module.exports.createArticle = ('/', (req, res, next) => {
   Articles.create({
     keyword, title, text, date, source, link, image, owner: req.user._id,
   })
-    .then((article) => {
-      res.json({ data: article });
+    .then(() => {
+      res.json({
+        keyword, title, text, date, source, link, image,
+      });
     })
     .catch((err) => {
       if (err._message === 'cards validation failed') {
@@ -43,30 +45,31 @@ module.exports.deleteArticle = ((req, res, next) => {
     next(new InvalidData('Invalid Id'));
     return;
   }
-  Articles.findById(articleId)
+  Articles.findById(articleId).select('+owner')
     .orFail(new Error('notValidId'))
     .then((article) => {
       if (article.owner.toString() === req.user._id.toString()) {
-        Articles.findByIdAndRemove(articleId)
+        article.remove(articleId)
           .then((articleTo) => {
-            res.json({ data: articleTo });
+            res.json({
+              keyword: articleTo.keyword,
+              title: articleTo.title,
+              text: articleTo.text,
+              date: articleTo.date,
+              source: articleTo.source,
+              link: articleTo.link,
+              image: articleTo.image,
+            });
           });
       } else {
         next(new Forbidden('Вы не можете удалять чужие карточки'));
-        // eslint-disable-next-line no-useless-return
-        return;
       }
     })
     .catch((err) => {
       if (err.message === 'notValidId') {
         next(new NotFoundError('Нет пользователя с таким id'));
-        // eslint-disable-next-line no-useless-return
-        return;
-        // eslint-disable-next-line no-else-return
       } else {
         next(new ServerError('Internal server error'));
-        // eslint-disable-next-line no-useless-return
-        return;
       }
     })
     .catch(next);

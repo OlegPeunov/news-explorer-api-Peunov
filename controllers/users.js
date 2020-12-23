@@ -13,7 +13,7 @@ module.exports.createUser = ('/', (req, res, next) => {
   bcrypt.hash(password, 10)
     .then((hash) => Users.create({ name, email, password: hash })
       .then((users) => {
-        res.json({ data: users });
+        res.json({ name: users.name, email: users.email });
       })
       .catch((err) => {
         if (err._message === 'user validation failed') {
@@ -33,7 +33,8 @@ module.exports.login = (req, res, next) => {
   return Users.findUserByCredentials(email, password)
     .then((user) => {
       if (!user) {
-        throw new Unauthorized('Требуется аутентификация');
+        next(new Unauthorized('Требуется аутентификация'));
+        return;
       }
       const token = jwt.sign(
         { _id: user._id },
