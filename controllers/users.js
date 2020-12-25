@@ -5,8 +5,8 @@ const jwt = require('jsonwebtoken');
 const Users = require('../models/users');
 const InvalidData = require('../errors/invalid-data');
 const Conflict = require('../errors/conflict');
-const Unauthorized = require('../errors/unauthorized');
 const NotFoundError = require('../errors/not-found-err');
+const InternalServerError = require('../errors/internal-server-error');
 
 module.exports.createUser = ('/', (req, res, next) => {
   const { name, email, password } = req.body;
@@ -23,7 +23,7 @@ module.exports.createUser = ('/', (req, res, next) => {
         if (err.name === 'MongoError' && err.code === 11000) {
           throw new Conflict('Пользователь с таким email уже существует');
         }
-        res.status(500).send({ message: 'Internal server error' });
+        next(new InternalServerError('Internal server error'));
       }))
     .catch(next);
 });
@@ -32,10 +32,6 @@ module.exports.login = (req, res, next) => {
   const { email, password } = req.body;
   return Users.findUserByCredentials(email, password)
     .then((user) => {
-      if (!user) {
-        next(new Unauthorized('Требуется аутентификация'));
-        return;
-      }
       const token = jwt.sign(
         { _id: user._id },
         NODE_ENV === 'production' ? JWT_SECRET : 'some-secret-key',
