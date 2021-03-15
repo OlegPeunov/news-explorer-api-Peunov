@@ -1,10 +1,8 @@
 # news-explorer-api-Peunov
 
-#Дипломная Работа
-
 ####Версия 1
 
-Эта дипломная работа выполненная по завершению целого курса Яндекс Практикум (9 месяцев), по сециальности "Веб-разработчик".
+Бэкенд для работы хранения данных пользователя, полученных с news-explorer-api-Peunov: https://github.com/OlegPeunov/news-explorer-frontend-Peunov/blob/main/README.md 
 
 Для запуска проета нужно скачать проект через: git clone https://github.com/OlegPeunov/news-explorer-api-Peunov.git
 и запустить через команду "npm run start"
