@@ -1,6 +1,6 @@
 # news-explorer-api-Peunov
 
-####Версия 1
+#### Версия 1
 
 Бэкенд для работы хранения данных пользователя, полученных с news-explorer-api-Peunov: https://github.com/OlegPeunov/news-explorer-frontend-Peunov/blob/main/README.md 
 
