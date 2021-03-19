@@ -8,8 +8,8 @@
 В проекте две сущности пользователя и статьи (**user** и **article**)  
 Все полученные данные хранится в ситеме MongoDB
 
-Проект также размещен на яндекс облаке:
-Домен: https://diplompeunov.students.nomoreparties.space
+Проект также размещен на яндекс облаке:  
+Домен: https://diplompeunov.students.nomoreparties.space  
 Публичный ip:178.154.228.31
 
 
