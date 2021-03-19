@@ -19,7 +19,7 @@
 * Авторизация пользователя, проверяет переданные почту и пароль и возвращает JWT - **POST /signin**
 * Запрос данных авторизованного пользователя - **GET /users/me**
 * Запрос всех сохранённыех пользователем стаей - **GET /articles**
-* Создание статьи с переданными в теле данными, с переданными данными(keyword, title, text, date, source, link и image) - **POST /articles** 
+* Создание статьи с переданными в теле данными(keyword, title, text, date, source, link и image) - **POST /articles** 
 * Удаляет сохранённую статью по id - **DELETE /articles/articleId **
 
 
