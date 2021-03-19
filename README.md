@@ -4,7 +4,7 @@
 
 ## О проекте:  
 
-Бэкенд для хранения данных пользователя, полученных с news-explorer-api-Peunov: https://github.com/OlegPeunov/news-explorer-frontend-Peunov/blob/main/README.md  
+Бэкенд для работы с данными пользователей, полученных с news-explorer-api-Peunov: https://github.com/OlegPeunov/news-explorer-frontend-Peunov/blob/main/README.md  
 В проекте две сущности пользователя и статьи (**user** и **article**)
 Все полученные данные хранится в ситеме MongoDB
 
